@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904024432) do
+ActiveRecord::Schema.define(:version => 20130904084605) do
 
   create_table "addresses", :force => true do |t|
-    t.integer  "agent_id",   :null => false
+    t.integer  "agent_id",                      :null => false
     t.string   "postcode"
-    t.text     "address1",   :null => false
+    t.text     "address1",                      :null => false
     t.text     "address2"
     t.text     "address3"
-    t.string   "town",       :null => false
-    t.string   "county",     :null => false
-    t.string   "country",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "town",                          :null => false
+    t.string   "county",                        :null => false
+    t.string   "country",                       :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "is_default",  :default => false
   end
 
   create_table "agents", :force => true do |t|

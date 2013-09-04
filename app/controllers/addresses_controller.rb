@@ -47,8 +47,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # PUT /addresses/1
-  # PUT /addresses/1.json
   def update
     @address = @agent.addresses.find(params[:id])
 
@@ -63,8 +61,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # DELETE /addresses/1
-  # DELETE /addresses/1.json
   def destroy
     @address = @agent.addresses.find(params[:id])
     @address.destroy
@@ -73,6 +69,13 @@ class AddressesController < ApplicationController
       format.html { redirect_to agent_addresses_url(@agent) }
       format.json { head :no_content }
     end
+  end
+
+  def set_default
+    address = @agent.addresses.find(params[:id])
+    @agent.addresses.remove_primary
+    address.update_attributes(is_default: true)
+    redirect_to agent_addresses_path(@agent), notice: 'Set default address successfully.'
   end
 
   private

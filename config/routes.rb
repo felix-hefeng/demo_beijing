@@ -2,7 +2,11 @@ TestDemo::Application.routes.draw do
 
 
   resources :agents do
-    resources :addresses
+    resources :addresses do
+      member do
+        get :set_default
+      end
+    end
   end
 
 

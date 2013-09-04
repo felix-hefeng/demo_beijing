@@ -17,7 +17,7 @@
 
 <% @addresses.each do |address| %>
   <tr>
-    <td><%= address.agent_id %></td>
+    <td><%= address.agent.full_name %></td>
     <td><%= address.postcode %></td>
     <td><%= address.address1 %></td>
     <td><%= address.address2 %></td>
@@ -28,6 +28,7 @@
     <td><%= link_to 'Show', agent_address_path(@agent, address) %></td>
     <td><%= link_to 'Edit', edit_agent_address_path(@agent, address) %></td>
     <td><%= link_to 'Destroy', agent_address_path(@agent, address), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><% unless address.is_default %> <%= link_to 'Set as Default', set_default_agent_address_path(@agent, address) %><% end %></td>
   </tr>
 <% end %>
 </table>
