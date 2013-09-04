@@ -7,7 +7,7 @@ class Agent < ActiveRecord::Base
     end
   end
   attr_accessible :agent_no, :first_name, :last_name
-
+  validates_presence_of :first_name, :last_name
   def full_name
     first_name + " " + last_name
   end

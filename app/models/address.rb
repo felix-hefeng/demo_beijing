@@ -4,7 +4,7 @@ class Address < ActiveRecord::Base
   after_create :set_defaulted
 
   default_scope :order => "id desc"
-
+  validates_presence_of :address1, :country, :county, :town
   private
 
   def set_defaulted
