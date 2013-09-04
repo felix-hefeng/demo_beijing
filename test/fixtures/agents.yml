@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  agent_no: MyString
+  first_name: MyString
+  last_name: MyString
+
+two:
+  agent_no: MyString
+  first_name: MyString
+  last_name: MyString

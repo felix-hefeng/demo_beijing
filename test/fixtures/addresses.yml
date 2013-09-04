@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  agent_id: 
+  postcode: MyString
+  address1: MyText
+  address2: MyText
+  address3: MyText
+  town: MyString
+  county: MyString
+  country: MyString
+
+two:
+  agent_id: 
+  postcode: MyString
+  address1: MyText
+  address2: MyText
+  address3: MyText
+  town: MyString
+  county: MyString
+  country: MyString
